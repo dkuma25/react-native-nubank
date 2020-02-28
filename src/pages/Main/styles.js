@@ -1,3 +1,4 @@
+import { Animated } from 'react-native'
 import styled from 'styled-components/native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper'
 
@@ -14,7 +15,7 @@ export const Content = styled.View`
   z-index: 5;
 `;
 
-export const Card = styled.View`
+export const Card = styled(Animated.View)`
   flex: 1;
   background: #FFF;
   border-radius: 4px;
@@ -42,12 +43,20 @@ export const CardContent = styled.View`
 export const Title = styled.Text`
   font-size: 13px;
   color: #999;
+  ${Platform.select({
+    ios: { fontFamily: 'Arial' },
+    android: { fontFamily: 'Roboto' }
+  })};
 `;
 
 export const Description = styled.Text`
   font-size: 32px;
   margin-top: 3px;
   color: #333;
+  ${Platform.select({
+    ios: { fontFamily: 'Arial' },
+    android: { fontFamily: 'Roboto' }
+  })};
 `;
 
 export const CardFooter = styled.View`
@@ -59,4 +68,8 @@ export const CardFooter = styled.View`
 export const Annotation = styled.Text`
   font-size: 12px;
   color: #333;
+  ${Platform.select({
+    ios: { fontFamily: 'Arial' },
+    android: { fontFamily: 'Roboto' }
+  })};
 `;

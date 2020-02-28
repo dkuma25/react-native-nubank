@@ -1,4 +1,5 @@
 import styled from 'styled-components/native';
+import { Platform } from 'react-native'
 
 export const Container = styled.View`
   align-items: center;
@@ -18,4 +19,8 @@ export const Title = styled.Text`
   color: #FFF;
   font-weight: bold;
   margin-left: 8px;
+  ${Platform.select({
+    ios: { fontFamily: 'Arial' },
+    android: { fontFamily: 'Roboto' }
+  })};
 `;
